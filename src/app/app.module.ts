@@ -26,7 +26,7 @@ import { RecipeItemComponent } from './recipe/recipe-list/recipe-item/recipe-ite
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [], 
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
