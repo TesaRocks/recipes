@@ -4,12 +4,12 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
   selector: '[appPink]',
 })
 export class PinkDirective {
-  @HostBinding('style.backgroundColor') bc: string = 'blue';
-  @HostListener('mouseover') changeC() {
+  @HostBinding('style.backgroundColor') bc: string = 'red';
+  @HostListener('mouseover') changeC(): void {
     this.bc = 'pink';
   }
-  @HostListener('mouseleave') ch(){
-    this.bc = 'transparent'
+  @HostListener('mouseleave') ch(): void {
+    this.bc = 'transparent';
   }
   constructor() {}
 }
