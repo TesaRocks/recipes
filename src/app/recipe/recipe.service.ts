@@ -9,7 +9,7 @@ export class RecipeService {
     new Recipe(
       'Tasty Shnitzel',
       'A super Tsaty Shnitzel AWESOME',
-      'https://upload.wikimedia.org/wikipedia/commons/d/d9/Hungarian_schnitzel_with_nokedli.png',
+      'https://upload.wikimedia.org/wikipedia/commons/b/bc/Wiener_Schnitzel_2012.jpg',
       [new Ingredient('Meat', 1), new Ingredient('flour', 20)]
     ),
     new Recipe(

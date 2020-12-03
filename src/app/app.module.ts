@@ -14,6 +14,7 @@ import { RecipeItemComponent } from './recipe/recipe-list/recipe-item/recipe-ite
 import { DropdownDirective } from './shared/dropdown.directive';
 import { PinkDirective } from './shared/pink.directive';
 import { ShoppingService } from './shopping/shopping.service';
+import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ShoppingService } from './shopping/shopping.service';
     ShoppingEditComponent,
     DropdownDirective,
     PinkDirective,
+    RecipeStartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [ShoppingService],
