@@ -10,7 +10,7 @@ export class ShoppingService {
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10),
-    new Ingredient('Tomatoes', 50),
+    new Ingredient('Cucumber', 50),
   ];
   getIng() {
     return this.ingredients.slice();
