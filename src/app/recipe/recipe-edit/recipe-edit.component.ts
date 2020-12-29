@@ -70,7 +70,7 @@ export class RecipeEditComponent implements OnInit {
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
-    this.onCancel()
+    this.onCancel();
   }
   get controls() {
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
@@ -86,11 +86,11 @@ export class RecipeEditComponent implements OnInit {
       })
     );
   }
- 
+
   onCancel() {
-this.router.navigate(['../'], {relativeTo: this.route})   
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
-  onDeleteIng(index: number){
-(<FormArray>this.recipeForm.get('ingredients')).removeAt(index)
+  onDeleteIng(index: number) {
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
   }
 }

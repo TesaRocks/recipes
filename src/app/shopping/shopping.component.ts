@@ -22,11 +22,11 @@ export class ShoppingComponent implements OnInit, OnDestroy {
         this.ingredients = ing;
       }
     );
-  };
-  onEditItem(id: number){
-    this.shoppingService.startedEditing.next(id)
   }
-  ngOnDestroy(){
+  onEditItem(id: number) {
+    this.shoppingService.startedEditing.next(id);
+  }
+  ngOnDestroy() {
     this.ingChange.unsubscribe();
   }
 }
