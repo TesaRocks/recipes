@@ -7,25 +7,30 @@ import { Recipe } from './recipe.model';
 export class RecipeService {
   //recipeSelected  = new Subject<Recipe>();
   recipesChanged = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Tasty Shnitzel',
-      'A super Tsaty Shnitzel AWESOME',
-      'https://upload.wikimedia.org/wikipedia/commons/b/bc/Wiener_Schnitzel_2012.jpg',
-      [new Ingredient('Meat', 1), new Ingredient('flour', 20)]
-    ),
-    new Recipe(
-      'Big FAT BURGER',
-      'This is so cool yummy',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/BK_Whopper.JPG/1280px-BK_Whopper.JPG',
-      [
-        new Ingredient('fish', 1),
-        new Ingredient('fries', 20),
-        new Ingredient('conchi', 20),
-      ]
-    ),
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'Tasty Shnitzel',
+  //     'A super Tsaty Shnitzel AWESOME',
+  //     'https://upload.wikimedia.org/wikipedia/commons/b/bc/Wiener_Schnitzel_2012.jpg',
+  //     [new Ingredient('Meat', 1), new Ingredient('flour', 20)]
+  //   ),
+  //   new Recipe(
+  //     'Big FAT BURGER',
+  //     'This is so cool yummy',
+  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/BK_Whopper.JPG/1280px-BK_Whopper.JPG',
+  //     [
+  //       new Ingredient('fish', 1),
+  //       new Ingredient('fries', 20),
+  //       new Ingredient('conchi', 20),
+  //     ]
+  //   ),
+  // ];
+  private recipes: Recipe[] = [];
   constructor(private shoppingService: ShoppingService) {}
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
   getRecipe() {
     return this.recipes.slice();
   }
@@ -43,7 +48,7 @@ export class RecipeService {
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
   }
-  deleteRecipe(index: number){
+  deleteRecipe(index: number) {
     this.recipes.splice(index, 1);
     this.recipesChanged.next(this.recipes.slice());
   }
