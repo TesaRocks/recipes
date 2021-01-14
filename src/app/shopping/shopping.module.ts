@@ -11,6 +11,6 @@ const routes: Routes = [{ path: '', component: ShoppingComponent }];
 @NgModule({
   declarations: [ShoppingComponent, ShoppingEditComponent],
   imports: [FormsModule, RouterModule.forChild(routes), SharedModule],
-  providers: [LoggingService],
+  //providers: [LoggingService],
 })
 export class ShoppingModule {}
